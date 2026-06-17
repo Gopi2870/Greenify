@@ -10,7 +10,7 @@
 > **Making Cities Cleaner, One Report at a Time.**
 > Greenify is a community-driven smart waste management platform designed to connect citizens, mediators, and municipal workers (VMC) to report, verify, and resolve pollution hotspots while rewarding civic action.
 
-📁 **GitHub Repository:** [https://github.com/Gopi2870/mindsprint2025](https://github.com/Gopi2870/mindsprint2025)
+📁 **GitHub Repository:** [https://github.com/Gopi2870/mindsprint2025](https://github.com/Gopi2870/Greenify)
 
 ---
 
