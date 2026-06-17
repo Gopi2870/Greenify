@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrashSnap — Wallet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">TrashSnap</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="wallet.html" class="active">Wallet</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="wallet-card card">
+      <div class="wallet-left">
+        <div class="small muted">Available Balance</div>
+        <div class="wallet-amount">₹<span id="walletBalance">0</span></div>
+      </div>
+      <div class="wallet-right">
+        <button class="btn" id="payoutBtn">Request Payout</button>
+        <button class="btn ghost" id="addUpi">Add UPI</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Transaction History</h3>
+      <div id="txList" class="list muted"></div>
+    </section>
+  </main>
+
+  <footer class="bottomnav">
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="#" id="snapBottomWallet">📸</a>
+    <a href="#">History</a>
+    <a href="wallet.html" class="active">Wallet</a>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      // fill wallet info
+      const user = window.appState.currentUser;
+      document.getElementById('walletBalance').textContent = (user && user.wallet)? user.wallet : 180; // demo fallback
+
+      const txList = document.getElementById('txList');
+      const txs = window.appState.reports.filter(r=>r.status==='cleaned').map(r=>({text:`Report cleared - ${r.coords? (r.coords.lat.toFixed(4)+','+r.coords.lng.toFixed(4)):r.id}`, amount: r.reward||10, date: r.cleanedAt||r.timestamp}));
+      if(!txs.length) txList.innerHTML = '<div class="muted">No transactions yet</div>';
+      else txList.innerHTML = txs.map(t=>`<div class="tx"><div>${t.text}<div class='small muted'>${new Date(t.date).toLocaleDateString()}</div></div><div class='tx-amt'>+₹${t.amount}</div></div>`).join('');
+    });
+  </script>
+</body>
+</html>

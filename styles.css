@@ -1,0 +1,52 @@
+:root{--accent:#22c55e;--accent-2:#ff8a00;--muted:#6b7280;--card-bg:#fff;--radius:12px}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;background:#f6fbf9;color:#0f172a}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:#fff;border-bottom:1px solid #eef2f7}
+.brand{font-weight:700;color:var(--accent);font-size:20px}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+.nav a.active{color:var(--accent);background:#f0fdf9}
+.btn{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:10px;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid #e6eef0;color:var(--muted)}
+.btn.small{padding:6px 8px;font-size:13px}
+.container{max-width:1100px;margin:28px auto;padding:0 18px}
+.card{background:var(--card-bg);padding:18px;border-radius:var(--radius);box-shadow:0 8px 20px rgba(16,32,56,0.05);margin-bottom:16px}
+.hero{display:flex;gap:20px;align-items:center}
+.hero-left{flex:1}
+.hero-right{width:420px}
+.kicker{display:inline-block;background:#e8fff5;padding:6px 10px;border-radius:20px;color:var(--accent);font-weight:600;margin-bottom:10px}
+.h1{font-size:28px}
+h1{font-size:42px;margin:6px 0}
+h1 .accent{color:var(--accent)}
+.muted{color:var(--muted)}
+.hero-actions{display:flex;gap:12px;align-items:center;margin-top:16px}
+.large{padding:14px 22px;font-size:16px}
+.orange{background:var(--accent-2);box-shadow:0 10px 30px rgba(255,138,0,0.18)}
+.row{display:flex;gap:12px}
+.stats{display:flex;gap:16px}
+.stat{flex:1;text-align:center;padding:22px}
+.stat-num{font-weight:800;font-size:20px}
+.stat-label{color:var(--muted);margin-top:6px}
+.recent ul{list-style:none;padding:0;margin:0}
+.recent li{padding:8px 0;border-bottom:1px solid #f3f6f8}
+.bottomnav{position:fixed;left:0;right:0;bottom:0;height:66px;background:#fff;border-top:1px solid #eef2f7;display:flex;justify-content:space-around;align-items:center}
+.bottomnav a{color:var(--muted);text-decoration:none}
+.pill{display:inline-block;padding:8px 12px;border-radius:20px}
+.pill.orange{background:#fff4eb;color:#ff8a00}
+.pill.green{background:#f0fdf4;color:#22c55e}
+.pill.purple{background:#f4ecff;color:#8b5cf6}
+.pill.blue{background:#e8f0ff;color:#2563eb}
+.legend{margin-top:12px}
+.profile{width:36px;height:36px;border-radius:50%;background:#eef6ff;display:grid;place-items:center}
+.hidden{display:none}
+.wallet-card{display:flex;justify-content:space-between;align-items:center}
+.wallet-amount{font-size:32px;font-weight:800}
+.list .tx{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f3f6f8}
+.tx-amt{color:var(--accent);font-weight:700}
+.small{font-size:13px}
+
+/* map tweaks */
+.leaflet-container{border-radius:12px}
+
+/* responsive */
+@media (max-width:900px){.hero{flex-direction:column}.hero-right{width:100%}}

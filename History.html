@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrashSnap — Image Preview</title>
+  <style>
+    :root{
+      --bg:#f6f7f8;
+      --card:#ffffff;
+      --muted:#9aa3a8;
+      --accent:#22c55e;
+      --glass: rgba(255,255,255,0.7);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f7fbfc, #ffffff);}
+    .app-wrap{min-height:100%;display:flex;flex-direction:column;align-items:stretch}
+
+    header{display:flex;align-items:center;gap:12px;padding:18px 22px;background:var(--card);box-shadow:0 2px 8px rgba(20,20,20,0.04);}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .icon{width:44px;height:44px;background:#22c55e;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .logo h1{font-size:18px;margin:0}
+    .spacer{flex:1}
+
+    main{padding:26px;flex:1;display:flex;flex-direction:column;gap:18px}
+
+    /* image preview card */
+    .preview-card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(20,20,20,0.06);display:flex;gap:16px;align-items:flex-start}
+    .preview-card img{max-width:100%;height:auto;border-radius:10px;display:block;}
+    .preview-left{width:200px;flex:0 0 200px}
+    .preview-right{flex:1;display:flex;flex-direction:column;gap:8px}
+
+    .meta .title{font-weight:600;color:#2d3748}
+    .meta .subtitle{color:var(--muted);font-size:14px}
+    .tags{display:flex;gap:8px;margin-top:8px}
+    .tag{background:var(--glass);border-radius:999px;padding:6px 10px;font-size:13px;color:#2b6cb0}
+
+    .actions{margin-top:12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid rgba(0,0,0,0.06)}
+    .btn.primary{background:#ff7a18;color:#fff;border:none}
+    .btn.ghost{background:transparent}
+
+    footer{height:84px;background:transparent;display:flex;align-items:center;justify-content:center}
+    .hint{color:var(--muted);font-size:13px}
+
+    @media (max-width:720px){
+      .preview-card{flex-direction:column}
+      .preview-left{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="app-wrap">
+    <header>
+      <div class="logo">
+        <div class="icon">TS</div>
+        <div>
+          <h1>TrashSnap</h1>
+          <div style="font-size:12px;color:var(--muted)">Clean. Report. Reward.</div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="font-size:14px;color:var(--muted)">History</div>
+        <img src="/mnt/data/59c63ad0-e5f9-4192-82ea-fa1cd5af9a62.png" alt="avatar" style="width:40px;height:40px;border-radius:50%">
+      </div>
+    </header>
+
+    <main>
+      <section class="preview-card">
+        <div class="preview-left">
+          <!-- left thumbnail / preview -->
+          <img src="/mnt/data/59c63ad0-e5f9-4192-82ea-fa1cd5af9a62.png" alt="TrashSnap screenshot">
+        </div>
+        <div class="preview-right">
+          <div class="meta">
+            <div class="title">TrashSnap — History page screenshot</div>
+            <div class="subtitle">Screenshot of the TrashSnap app history page (map, reports, wallet &amp; bottom action).</div>
+            <div class="tags">
+              <div class="tag">UI Mock</div>
+              <div class="tag">Screenshot</div>
+              <div class="tag">Report History</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="/mnt/data/59c63ad0-e5f9-4192-82ea-fa1cd5af9a62.png" target="_blank" rel="noopener">Open Original</a>
+            <a class="btn ghost" href="/mnt/data/59c63ad0-e5f9-4192-82ea-fa1cd5af9a62.png" download style="margin-left:10px">Download</a>
+          </div>
+
+          <div style="margin-top:12px;color:var(--muted);font-size:14px;">Tip: You can embed this image into any page by using the <code>img</code> tag with the provided path.</div>
+        </div>
+      </section>
+
+      <!-- larger full-width preview -->
+      <section style="background:transparent">
+        <div style="border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(20,20,20,0.06)">
+          <img src="/mnt/data/59c63ad0-e5f9-4192-82ea-fa1cd5af9a62.png" alt="Full screenshot" style="display:block;width:100%;height:auto">
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="hint">If you want this page adjusted (responsive layout, annotations, or extracted assets), tell me what to change.</div>
+    </footer>
+  </div>
+</body>
+</html>
